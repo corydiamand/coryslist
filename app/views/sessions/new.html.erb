@@ -1,0 +1,26 @@
+
+<div id="home-container">
+	<div id="home-logo">Cory's List</div>
+	<div id="home-slogan">A human way to get things done.</div>
+
+	<div id="home-login">
+	<h2>Log In</h2>
+
+		<%= form_tag sessions_path do %>
+		  <div class="field">
+		    <%= label_tag :email %><br />
+		    <%= text_field_tag :email, params[:email] %>
+		  </div>
+		  <div class="field">
+		    <%= label_tag :password %><br />
+		    <%= password_field_tag :password %>
+		  </div>
+		  <div class="actions"><%= submit_tag "Log In" %></div>
+		<% end %>
+	</div>
+	<div id="home-signup-container">
+		<div id="home-signup"><%= link_to "Sign Up", signup_path  %>
+		</div>
+	</div>
+
+</div>
