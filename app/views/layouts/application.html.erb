@@ -9,6 +9,20 @@
 </head>
 <body>
 
+<div class="navbar navbar-fixed-top">  
+  <div class="navbar-inner">  
+    <div class="container">
+    	<div id="navbar-logo">
+    		<% if current_user %>
+    			<%= link_to "Cory's List", dashboard_path %>
+    		<% else %>
+    			<%= link_to "Cory's List", index_path %>
+    		<% end %>
+    	</div>
+    </div>  
+  </div>  
+</div>  
+
 <%= yield %>
 
 </body>

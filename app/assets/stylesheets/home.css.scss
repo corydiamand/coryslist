@@ -3,10 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#navbar-logo{
+	font-family: 'Oleo Script', cursive;
+	font-size: 20px;
+	color: #00b64f;
+	margin-top:10px;
+	margin-left: 20px;
+}
 #home-container{
 	width:100%;
 	height: 700px;
-	border:1px solid black;
 }
 #home-logo{
 font-family: 'Oleo Script', cursive;
@@ -50,7 +56,7 @@ text-align:center;
 }
 
 #home-login label{
-	margin-bottom:0px;
+	margin-bottom:-18px;
 }
 
 #home-signup-container{
@@ -66,4 +72,23 @@ text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	font-size:30px;
+}
+
+#signup-container{
+	width:50%;
+	margin-top:100px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+#signup-container label{
+	margin-bottom:-18px;
+}
+
+#signup-container h1{
+	font-family: 'Oleo Script', cursive;
+	font-size: 30px;
+	color: #00b64f;
+	margin-bottom: 40px;
 }
