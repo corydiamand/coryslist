@@ -19,37 +19,53 @@
   <% end %>
 
 <div id ="lists-container">
-	<div class="list-container">
-		<% @lists.each do |l| %>
-
+	<% @lists.each do |l| %>
+		<div class="list-container">
 			<div class="list-title">
 				<%= l.title %>
 			</div>
 			<div class="list-description">
 	  			<%= l.description %>
 	  		</div>
+	  		<div class="task-create-link">
+	  			<%= link_to "Add task", new_task_path(:list_id => l.id), :method => :post %>
+	  		</div>
 	  		<div class="tasks-container">
-	  			<% l.tasks.each do |t| %>
-		  			<div class="task-container">
-			  			<div class="task-mark-complete">
-			  			</div>
+	  			<% l.tasks.order(:created_at).each do |t| %>
+	  				<% if t.status==true %>
+		  				<div class="task-container task-completed">
+				  			<div class="task-mark-complete">
+				  				<%= form_for(t) do |f| %>
+	  								<div class="update-task">
+	  									<%= f.submit ""%>
+	  								</div>
+								<% end %>
+				  			</div>
+			  			<% else %>
+			  				<div class="task-container">
+					  			<div class="task-mark-complete">
+					  				<%= form_for(t) do |f| %>
+		  								<div class="update-task">
+		  									<%= f.submit ""%>
+		  								</div>
+									<% end %>
+					  			</div>
+			  			<% end %>
 			  			<div class="task-title">
 			  				<%= t.title %>
+			  			</div>
+			  			<div class="task-delete-link">
+			  				<%= link_to "x", t, method: :delete, data: {confirm: "Are you sure you want to delete this task?"} %>
 			  			</div>
 			  			<div class="task-description">
 			  				<%= t.description %>
 			  			</div>
-			  			<div class="task-delete-link">
-			  				<%= link_to "Delete Task", t, method: :delete, data: {confirm: "Are you sure you want to delete this task?"} %>
-			  			</div>
 			  			<div class="task-edit-link">
 			  			</div>
 		  			</div>
+		  			<br></br>
 	  			<% end %>
 	  		</div>
-	  		<div class="create-task-link">
-	  			<%= link_to "Add task", new_task_path(:list_id => l.id), :method => :post %>
-	  		</div>
-	  	<% end %>
-  	</div>
+  		</div>
+  	<% end %>
 </div>

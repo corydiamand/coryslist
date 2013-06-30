@@ -113,14 +113,80 @@ text-align:center;
 
 .list-container{
 	margin-top: 20px;
+	margin-left:10px;
+	width: 300px;
+	float: left;
 }
 
 .list-title{
 	font-weight: bold;
+	font-size:20px;
 }
 
 .list-description{
 	font-style:italic;
+	margin-bottom: 25px;
+}
+
+.task-create-link{
+	margin-bottom:20px;
+}
+
+.tasks-container{
+}
+
+.task-container{
+	width: 280px;
+	margin-bottom:10px;
+}
+
+.task-mark-complete{
+	float:left;
+	margin-right:5px;
+}
+
+.task-completed{
+	text-decoration:line-through;
+}
+
+.task-completed .task-title{
+	text-decoration:line-through;
+}
+
+.task-completed .task-description{
+	text-decoration:line-through;
+}
+
+.task-completed .update-task input{
+	border: 1px solid green;
+}
+
+.update-task{
+	
+}
+
+.update-task input{
+	height:15px;
+}
+
+.task-title{
+	float: left;
+}
+
+.task-description{
+	float:left;
+}
+
+.task-delete-link {
+	float:right;
+}
+
+.task-delete-link a{
+	color:red;
+}
+
+.task-edit-link{
+
 }
 
 #task-create-form{
