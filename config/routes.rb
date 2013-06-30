@@ -5,11 +5,16 @@ Coryslist::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'index', to: 'home#index', as: 'index'
+  get 'list', to: 'list', as: 'lists'
+  get 'task', to: 'task', as: 'tasks'
+
+  match 'task/new' => 'task#new'
 
   root :to => "home#index"
   resources :users
   resources :sessions
-
+  resources :list
+  resources :task
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

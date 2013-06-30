@@ -1,0 +1,16 @@
+<div id="task-create-form">  
+  <%= params.inspect %>
+  <%= form_for @task do |f| %>
+
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
+    <%= f.hidden_field :list_id, :value => params[:list_id] %>
+    <div class="actions"><%= f.submit "Create Task" %></div>
+  <% end %>
+</div>

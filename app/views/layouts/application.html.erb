@@ -19,6 +19,13 @@
     			<%= link_to "Cory's List", index_path %>
     		<% end %>
     	</div>
+      <div id="navbar-logout">
+        <% if current_user %>
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          
+        <% end %>
+      </div>
     </div>  
   </div>  
 </div>  
