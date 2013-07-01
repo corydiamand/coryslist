@@ -1,15 +1,20 @@
 class TaskController < ApplicationController
-
+	before_filter :authorize
 	
 	def new
 		@task = Task.new
 	end
 
 	def create
-		@task = Task.new(params[:task])
-		@task.status = false
-		@task.save
-		redirect_to dashboard_path
+		list = List.find(params[:task][:list_id])
+		if  current_user.id == list.user_id
+			@task = Task.new(params[:task])
+			@task.status = false
+			@task.save
+			redirect_to dashboard_path
+		else
+			redirect_to dashboard_path
+		end
 	end
 
 	def edit
