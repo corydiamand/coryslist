@@ -1,0 +1,4 @@
+divId = <%= params[:list_id] %>;
+$('#task-create-link'+divId).hide().after('<%= j render ("form") %>');
+
+

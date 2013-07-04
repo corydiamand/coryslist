@@ -20,15 +20,15 @@
 
 <div id ="lists-container">
 	<% @lists.each do |l| %>
-		<div class="list-container">
+		<div class="list-container" id="list-container<%=l.id %>">
 			<div class="list-title">
 				<%= l.title %>
 			</div>
 			<div class="list-description">
 	  			<%= l.description %>
 	  		</div>
-	  		<div class="task-create-link">
-	  			<%= link_to "Add task", new_task_path(:list_id => l.id), :method => :post %>
+	  		<div class="task-create-link" id="task-create-link<%=l.id%>">
+	  			<%= link_to "Add task", new_task_path(:list_id => l.id), :method => :post, remote:true %>
 	  		</div>
 	  		<div class="tasks-container">
 	  			<% l.tasks.order(:created_at).each do |t| %>

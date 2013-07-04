@@ -11,9 +11,11 @@ class TaskController < ApplicationController
 			@task = Task.new(params[:task])
 			@task.status = false
 			@task.save
-			redirect_to dashboard_path
-		else
-			redirect_to dashboard_path
+		end
+
+		respond_to do |format|
+			format.html{redirect_to dashboard_path}
+			format.js
 		end
 	end
 
