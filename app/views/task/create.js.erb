@@ -1,5 +1,4 @@
 divId = '<%= j params[:list_id] %>';
 console.log(divId)
 $('#task-create-form'+divId).remove();
-alert($('#task-create-link'+divId).show);
 $('.list-container'+divId).append('<%= j render partial: "task", locals: {t: @task} %>');
